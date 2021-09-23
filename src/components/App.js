@@ -1,11 +1,11 @@
 import "../styles/App.css";
 import Layout from "./Layout";
-import Home from "./pages/Home";
+import Quiz from "./pages/Quiz";
 
 function App() {
   return (
     <Layout>
-      <Home />
+      <Quiz />
     </Layout>
   );
 }

@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { AuthProvider } from "../contexts/AuthContext";
 import "../styles/App.css";
+import AuthRoute from "./AuthRoute";
+import GuestRoute from "./GuestRoute";
 import Layout from "./Layout";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -15,10 +17,10 @@ function App() {
         <Layout>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/singup" component={Signup} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/quiz" component={Quiz} />
-            <Route exact path="/result" component={Result} />
+            <GuestRoute exact path="/singup" component={Signup} />
+            <GuestRoute exact path="/login" component={Login} />
+            <AuthRoute exact path="/quiz" component={Quiz} />
+            <AuthRoute exact path="/result" component={Result} />
           </Switch>
         </Layout>
       </AuthProvider>

@@ -1,8 +1,5 @@
-import React from "react";
 import Videos from "../Videos";
 
-const Home = () => {
+export default function Home() {
   return <Videos />;
-};
-
-export default Home;
+}

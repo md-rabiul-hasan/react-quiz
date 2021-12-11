@@ -2,13 +2,12 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import classes from "../styles/Account.module.css";
 
-const Account = () => {
+export default function Account() {
   const { currentUser, logout } = useAuth();
   return (
     <div className={classes.account}>
       {currentUser ? (
         <>
-          {" "}
           <span className="material-icons-outlined" title="Account">
             account_circle
           </span>
@@ -24,11 +23,10 @@ const Account = () => {
         </>
       ) : (
         <>
-          <Link to="/singup">Signup</Link> |<Link to="/login">Login</Link>
+          <Link to="/signup">Signup</Link>
+          <Link to="/login">Login</Link>
         </>
       )}
     </div>
   );
-};
-
-export default Account;
+}

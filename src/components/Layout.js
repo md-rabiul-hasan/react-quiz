@@ -1,7 +1,7 @@
 import classes from "../styles/Layout.module.css";
 import Nav from "./Nav";
 
-const Layout = ({ children }) => {
+export default function Layout({ children }) {
   return (
     <>
       <Nav />
@@ -10,6 +10,4 @@ const Layout = ({ children }) => {
       </main>
     </>
   );
-};
-
-export default Layout;
+}

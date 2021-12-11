@@ -34,7 +34,7 @@ export default function SignupForm() {
     } catch (err) {
       console.log(err);
       setLoading(false);
-      setError(err.message);
+      setError("Failed to create an account!");
     }
   }
 

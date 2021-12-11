@@ -5,9 +5,9 @@ import Button from "./Button";
 import Form from "./Form";
 import TextInput from "./TextInput";
 
-const LoginForm = () => {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+export default function LoginForm() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const [error, setError] = useState();
   const [loading, setLoading] = useState();
@@ -17,6 +17,7 @@ const LoginForm = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
+
     try {
       setError("");
       setLoading(true);
@@ -25,40 +26,39 @@ const LoginForm = () => {
     } catch (err) {
       console.log(err);
       setLoading(false);
-      setError(err.message);
+      setError("Failed to login!");
     }
   }
 
   return (
-    <div>
-      <Form style={{ height: "350px" }} onSubmit={handleSubmit}>
-        <TextInput
-          icon="alternate_email"
-          type="text"
-          placeholder="Enter email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <TextInput
-          icon="lock"
-          type="password"
-          placeholder="Enter password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+    <Form style={{ height: "330px" }} onSubmit={handleSubmit}>
+      <TextInput
+        type="text"
+        placeholder="Enter email"
+        icon="alternate_email"
+        required
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
 
-        <Button type="submit" disabled={loading}>
-          Submit now
-        </Button>
+      <TextInput
+        type="password"
+        placeholder="Enter password"
+        icon="lock"
+        required
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
 
-        {error && <p className="error">{error}</p>}
+      <Button type="submit" disabled={loading}>
+        <span>Submit Now</span>
+      </Button>
 
-        <div className="info">
-          Don't have an account? <Link to="/singup">Signup</Link> instead.
-        </div>
-      </Form>
-    </div>
+      {error && <p className="error">{error}</p>}
+
+      <div className="info">
+        Don't have an account? <Link to="/signup">Signup</Link> instead.
+      </div>
+    </Form>
   );
-};
-
-export default LoginForm;
+}

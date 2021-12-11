@@ -1,15 +1,7 @@
-[![Youtube][youtube-shield]][youtube-url]
-[![Facebook Page][facebook-shield]][facebook-url]
-[![Facebook Group][facebook-shield]][facebook-group-url]
-[![Instagram][instagram-shield]][instagram-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
 <!-- PROJECT Title -->
 <br />
 <p align="center">
-  <h3 align="center"><a href="https://github.com/learnwithsumit/react-quiz">React Project Tutorial - Quiz Application with Firebase</a></h3>
-
-[![View on Youtube](http://img.youtube.com/vi/W3zMJxCUJAA/0.jpg)](https://youtu.be/W3zMJxCUJAA)
+  <h3 align="center"><a href="https://github.com/learnwithsumit/react-quiz">NUB Quiz - Quiz Application with Firebase</a></h3>
 
 <!-- TABLE OF CONTENTS -->
 
